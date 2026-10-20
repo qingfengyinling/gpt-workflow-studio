@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "workflow-studio": {
+      "command": "node",
+      "args": ["${PLUGIN_ROOT}/dist/server.mjs", "--stdio"],
+      "cwd": "${PLUGIN_ROOT}"
+    }
+  }
+}

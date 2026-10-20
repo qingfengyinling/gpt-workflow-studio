@@ -1,0 +1,14 @@
+{
+  "name": "gpt-workflow-studio",
+  "version": "0.1.0",
+  "description": "通用可视化工作流编排台，通过当前 GPT 对话审查与改进工作流。",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "序流 · 工作流编排台",
+    "shortDescription": "可视化编排，由当前 GPT 协助完善",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "personal-workflow-tools",
+  "interface": {"displayName": "个人工作流工具"},
+  "plugins": [
+    {
+      "name": "gpt-workflow-studio",
+      "source": {"source": "local", "path": "./plugins/gpt-workflow-studio"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity"
+    }
+  ]
+}

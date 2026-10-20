@@ -1,0 +1,21 @@
+{
+  "name": "gpt-workflow-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Visual workflow editor for ChatGPT and Codex with MCP tools and reviewable GPT patches.",
+  "repository": {"type": "git", "url": "https://github.com/qingfengyinling/gpt-workflow-studio.git"},
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/index.mjs --http",
+    "mcp": "node server/index.mjs --stdio",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@modelcontextprotocol/ext-apps": "^1.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": { "esbuild": "^0.25.0" }
+}

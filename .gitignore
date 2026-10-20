@@ -1,0 +1,11 @@
+node_modules/
+.pnpm-store/
+data/
+test-artifacts/
+*.log
+workspace-data/
+release-build/
+__pycache__/
+.env
+.env.*
+!.env.example

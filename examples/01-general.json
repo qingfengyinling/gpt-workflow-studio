@@ -1,0 +1,167 @@
+{
+  "$schema": "gpt-workflow-studio/v1",
+  "format": "workflow-file",
+  "schemaVersion": "1.0",
+  "generator": "GPT Workflow Studio",
+  "exportedAt": "2026-10-20T01:05:04.768Z",
+  "readme": "依赖图与任务契约，不是自动执行结果。分支条件与人工卡点由执行者落实。",
+  "workflow": {
+    "id": "example_general",
+    "name": "从想法到交付",
+    "goal": "把一个想法整理成可制作、可验证、可交付的成果。",
+    "delivery": "可使用的成果与交接说明，交项目负责人。",
+    "constraints": "记录事实与未定项；以可检查的产物交接；人工体验必须由真实用户完成。",
+    "nodes": [
+      {
+        "id": "start",
+        "type": "start",
+        "title": "明确目标与约束",
+        "owner": "项目负责人",
+        "model": "",
+        "instruction": "确认目标、读者、交付形式和边界，记录未决问题。",
+        "inputs": [
+          "需求与参考材料"
+        ],
+        "outputs": [
+          "目标与范围"
+        ],
+        "acceptance": "- [ ] 已明确目标、范围、交付形式与验收负责人",
+        "forbidden": [
+          "不编造执行结果"
+        ],
+        "notes": "失败时记录原因、受影响下游与恢复入口。",
+        "humanCheckpoint": false,
+        "timeoutSec": 0,
+        "retry": 0,
+        "x": 55,
+        "y": 65
+      },
+      {
+        "id": "design",
+        "type": "llm",
+        "title": "设计方案",
+        "owner": "当前 GPT",
+        "model": "",
+        "instruction": "将目标拆成任务，明确各步输入、输出与验收。",
+        "inputs": [
+          "目标与范围"
+        ],
+        "outputs": [
+          "方案与任务契约"
+        ],
+        "acceptance": "- [ ] 方案中的每项任务均有可检查输出",
+        "forbidden": [
+          "不编造执行结果"
+        ],
+        "notes": "失败时记录原因、受影响下游与恢复入口。",
+        "humanCheckpoint": false,
+        "timeoutSec": 600,
+        "retry": 1,
+        "x": 325,
+        "y": 65
+      },
+      {
+        "id": "build",
+        "type": "tool",
+        "title": "制作与验证",
+        "owner": "执行者",
+        "model": "",
+        "instruction": "使用当前环境中可用的工具制作成果并验证，记录实际结果。",
+        "inputs": [
+          "方案与任务契约"
+        ],
+        "outputs": [
+          "候选成果",
+          "验证记录"
+        ],
+        "acceptance": "- [ ] 候选成果可复现\n- [ ] 验证结果附证据，未测项目明确列出",
+        "forbidden": [
+          "不编造执行结果"
+        ],
+        "notes": "失败时记录原因、受影响下游与恢复入口。",
+        "humanCheckpoint": false,
+        "timeoutSec": 300,
+        "retry": 0,
+        "x": 595,
+        "y": 65
+      },
+      {
+        "id": "review",
+        "type": "human",
+        "title": "体验与决定",
+        "owner": "实际使用者",
+        "model": "",
+        "instruction": "实际使用候选成果，记录接受、修订或停止决定。",
+        "inputs": [
+          "候选成果",
+          "验证记录"
+        ],
+        "outputs": [
+          "体验反馈与决定"
+        ],
+        "acceptance": "- [ ] 已得到真实使用者反馈，未回复保持等待",
+        "forbidden": [
+          "不编造执行结果"
+        ],
+        "notes": "失败时记录原因、受影响下游与恢复入口。",
+        "humanCheckpoint": true,
+        "timeoutSec": 0,
+        "retry": 0,
+        "x": 865,
+        "y": 65
+      },
+      {
+        "id": "deliver",
+        "type": "output",
+        "title": "交付与后续",
+        "owner": "项目负责人",
+        "model": "",
+        "instruction": "按真实反馈交付成果，说明限制与后续事项。",
+        "inputs": [
+          "候选成果",
+          "验证记录",
+          "体验反馈与决定"
+        ],
+        "outputs": [
+          "交付包"
+        ],
+        "acceptance": "- [ ] 交付清单、使用说明、已知限制与后续决定一致",
+        "forbidden": [
+          "不编造执行结果"
+        ],
+        "notes": "失败时记录原因、受影响下游与恢复入口。",
+        "humanCheckpoint": false,
+        "timeoutSec": 0,
+        "retry": 0,
+        "x": 1135,
+        "y": 65
+      }
+    ],
+    "edges": [
+      {
+        "id": "e0",
+        "from": "start",
+        "to": "design",
+        "label": ""
+      },
+      {
+        "id": "e1",
+        "from": "design",
+        "to": "build",
+        "label": ""
+      },
+      {
+        "id": "e2",
+        "from": "build",
+        "to": "review",
+        "label": ""
+      },
+      {
+        "id": "e3",
+        "from": "review",
+        "to": "deliver",
+        "label": ""
+      }
+    ]
+  }
+}

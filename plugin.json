@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gpt-workflow-studio",
+  "version": "0.1.0",
+  "author": {"name": "qingfengyinling"},
+  "repository": "https://github.com/qingfengyinling/gpt-workflow-studio",
+  "homepage": "https://github.com/qingfengyinling/gpt-workflow-studio",
+  "description": "通用可视化工作流编排台：设计任务图、检查交接契约，并由当前 GPT 提出可预览的修改建议。",
+  "keywords": ["workflow", "visual-editor", "handoff", "MCP Apps"],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "interface": {
+        "displayName": "序流 · 工作流编排台",
+        "shortDescription": "可视化编排，由当前 GPT 协助完善",
+        "longDescription": "为任意项目编辑节点与连线，明确输入输出、验收与人工卡点；通过 MCP 与当前 GPT 对话交换审查上下文和待审补丁。支持本地画布和 MCP Apps 界面。",
+        "category": "Productivity",
+        "capabilities": ["Interactive", "Read", "Write"],
+        "defaultPrompt": ["打开工作流编排台", "帮我把项目整理成工作流", "检查当前流程的交接缺项并提出建议"],
+        "brandColor": "#26745E"
+      }
+    }
+  }
+}

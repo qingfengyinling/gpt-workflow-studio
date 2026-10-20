@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>序流 · GPT 工作流编排台</title><style>/* STYLE */</style></head>
+<body>
+<header><div class="brand"><span class="mark">⌘</span><div>序流 <small>WORKFLOW STUDIO</small></div></div><span class="connection" id="connection">正在连接…</span><div class="grow"></div><button id="import">导入</button><button id="export">导出交接包</button><button class="primary" id="save">保存工作流</button></header>
+<div class="shell">
+<aside class="library"><div class="eyebrow">我的工作空间</div><div class="section-head"><h2>工作流</h2><button id="create" aria-label="新建工作流">＋</button></div><div id="workflows"></div><div class="library-note"><b>让想法，有序发生。</b><p>将目标拆成可交接、可验证的步骤。由你决定，GPT 协助完善。</p></div><div class="version">GPT 插件版 · 0.1</div></aside>
+<main><div class="flow-head"><div><div class="eyebrow">流程设计 / <span id="node-count">0 个节点</span></div><h1 id="flow-title">选择一个工作流</h1><p id="flow-goal"></p></div><button id="settings">流程设置</button></div>
+<nav class="toolbar"><div class="segmented"><button class="active" id="canvas-tab">画布</button><button id="list-tab">步骤列表</button></div><button id="add-node">＋ 添加节点</button><button id="add-edge">连接节点</button><button id="layout">自动排布</button><button id="undo">撤销</button><div class="grow"></div><button id="zoom-out" aria-label="缩小画布">−</button><span id="zoom-label">100%</span><button id="zoom-in" aria-label="放大画布">＋</button></nav>
+<div class="workspace" id="workspace"><div class="canvas" id="canvas"><svg id="wires" aria-label="工作流连线"></svg><div id="nodes"></div></div><div id="steps" hidden></div><div class="canvas-empty" id="empty">从一个目标开始，搭建你的第一条工作流。</div></div>
+<footer><span id="validation-summary">等待工作流</span><div class="grow"></div><span id="save-state">所有修改由你掌控</span><button id="validate">查看检查结果</button></footer></main>
+<aside class="inspector"><div class="panel-tabs"><button class="active" id="detail-tab">节点详情</button><button id="assist-tab">GPT 助手 <span id="proposal-count"></span></button></div><div id="details"><div class="placeholder">选择节点，编辑它的任务契约。</div></div><div id="assistant" hidden><div class="assistant-intro"><span>✧</span><h2>一起把流程想清楚</h2><p>当前对话中的 GPT 可以检查交接缺项，提出可预览的修改建议。</p></div><label>本次希望改进什么<textarea id="assist-instruction" rows="3" placeholder="例如：检查各步骤的输入输出是否闭合"></textarea></label><button class="primary full" id="ask-gpt">请 GPT 审查当前流程</button><button class="full" id="refresh-proposals">刷新待审建议</button><p class="hint" id="assist-hint">GPT 只提交建议，应用前由你选择。</p><div id="proposals"></div></div></aside>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog id="dialog"><div class="dialog-head"><h2 id="dialog-title"></h2><button id="dialog-close" aria-label="关闭">×</button></div><div id="dialog-body"></div><div class="dialog-actions" id="dialog-actions"></div></dialog>
+<input id="import-file" type="file" accept=".json,application/json" hidden>
+<script type="module">/* SCRIPT */</script></body></html>
