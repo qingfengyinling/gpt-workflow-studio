@@ -1,0 +1,10 @@
+{
+  "archive": "dsh-workflow-studio-v0.3.3.zip",
+  "bytes": 139311,
+  "sha256": "e977da7fc64b91208baa2595c36a0265d0548c78be75543184494e69f332d94b",
+  "fileCount": 11,
+  "sourceFilesVerified": 8,
+  "hostAssertions": 242,
+  "clientAssertions": 93,
+  "actualDshInstallationVerified": false
+}

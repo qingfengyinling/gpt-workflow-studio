@@ -1,0 +1,18 @@
+# Bundle-level patch for dsh-workflow-studio.
+#
+# `insert` is the only key used here: the plugin's own Loader entry. `config` is
+# merged into that entry's config and handed to the host half's `apply(ctx, config)`.
+#
+# appRoot is only a *fallback* root: the browser half always sends the cwd of the
+# workspace it is bound to (the same way dsh-kanban scopes itself per workspace),
+# and that value wins. appRoot matters for the boot-time registration event and
+# for requests that arrive without ?cwd=.
+#
+# Single quotes keep the Windows backslashes literal in YAML.
+- insert:
+    - id: dsh-workflow-studio
+      name: dsh-workflow-studio
+      config:
+        appRoot: 'E:\AI工作流'
+        appDirName: workflow-studio
+        outDirName: workflows

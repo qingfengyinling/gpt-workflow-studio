@@ -1,0 +1,48 @@
+{
+  "sourceDocument": "工作流编排台-框架与构想.md",
+  "sourceSha256": "93a93ee4f195837e36a0c1fcc5b3770f54695b9ca1cc3f0d1c063dd41ba7bfbd",
+  "restoredAt": "2026-10-20T01:41:16.144Z",
+  "note": "Only the seven plugin files and the standalone HTML are restored. No subject-specific generators or historical agent notes are included.",
+  "files": [
+    {
+      "path": "dsh-workflow-studio/README.md",
+      "bytes": 16780,
+      "sha256": "bae96169f5c50a9e1b1b54ebf1ab4d30cd9b71fc5e9c807e7711d5ec3444d929"
+    },
+    {
+      "path": "dsh-workflow-studio/package.json",
+      "bytes": 1289,
+      "sha256": "30ceca543c3d9d1bd0300ba393a5620a54654a26f6e4e93f8d38c059411957ec"
+    },
+    {
+      "path": "dsh-workflow-studio/cordis.patch.yml",
+      "bytes": 753,
+      "sha256": "fe31b38d6c3b0b360df0cb495526dd4ce60efdc823beaa1ff61f90aaa5fdefe5"
+    },
+    {
+      "path": "dsh-workflow-studio/lib/index.js",
+      "bytes": 71303,
+      "sha256": "d0dbfd0bfe1c3de9cc8a068d3b0937227a1f889cd60fc29049ec0e70818b2ace"
+    },
+    {
+      "path": "dsh-workflow-studio/lib/client.js",
+      "bytes": 76196,
+      "sha256": "4403416d69d0e6598d56d7427dccc5edf5b43b9495b822ead2bb62266b425d1c"
+    },
+    {
+      "path": "dsh-workflow-studio/selftest.mjs",
+      "bytes": 49368,
+      "sha256": "d6e8ad57efcf4396cf51264d33df41feadd470bf8c8335cae0d199a6347a618a"
+    },
+    {
+      "path": "dsh-workflow-studio/client-harness.mjs",
+      "bytes": 34406,
+      "sha256": "9354b1f99e929aa2a65e2b369c835ee822e486f99a2637700d5fafe824aa0b3e"
+    },
+    {
+      "path": "workflow-studio/index.html",
+      "bytes": 188888,
+      "sha256": "0157b5cf8a44d614c6f0c62aac610c7471c216fbf0deb7b1443d9d45135a0ec4"
+    }
+  ]
+}

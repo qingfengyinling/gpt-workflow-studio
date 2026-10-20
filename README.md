@@ -10,6 +10,12 @@ A visual workflow editor for ChatGPT and Codex, with MCP tools, an MCP Apps UI, 
 
 ![工作流编排台界面](界面预览.png)
 
+## DSH 保留版
+
+此前的 DSH 工作流编排台已单独保存在 [`legacy/dsh/`](legacy/dsh/README.md)，含 v0.3.3 插件与原单文件工作台。
+
+[下载 DSH v0.3.3 恢复包](https://github.com/qingfengyinling/gpt-workflow-studio/raw/refs/heads/main/releases/dsh-workflow-studio-v0.3.3.zip)。DSH 版依赖 DSH 宿主；仓库根目录的 GPT 版通过 MCP 连接 ChatGPT／Codex。两个包分别安装，数据与配置不会自动迁移。
+
 ## 可以直接使用的功能
 
 - 新建多个工作流、导入旧编排台单图或 `workflows` 总集。

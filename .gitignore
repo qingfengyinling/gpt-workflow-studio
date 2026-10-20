@@ -9,3 +9,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
+.workflow-studio/
+.tmp-ws-selftest/
+.test-tmp/
